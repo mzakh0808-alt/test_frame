@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KRISANDROSOVA</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Nunito:wght@600;700&display=swap');
+
+  :root{
+    --bg: #fefdf9;
+    --header-bg: #f2f0ec;
+    --text: #412510;
+    --text-soft: rgba(65, 37, 16, 0.85);
+    --btn-bg: #412510;
+    --btn-text: #fffbfb;
+    --divider: #b29f8e;
+    --max-width: 1470px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    font-family: 'Inter', Tahoma, sans-serif;
+    color: var(--text);
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+
+  img { max-width: 100%; height: auto; display: block; }
+
+  .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 14px 20px 60px;
+  }
+
+  /* ===== Header ===== */
+  .header {
+    background-color: var(--header-bg);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 12px 24px;
+    margin-bottom: 40px;
+  }
+
+  .logo {
+    font-family: 'Nunito', Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.9px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-right: auto;
+  }
+  .logo span.accent { color: var(--divider); }
+
+  nav.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    list-style: none;
+    margin: 0 auto 0 40px;
+    padding: 0;
+  }
+  nav.main-nav a {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+  nav.main-nav a:hover { opacity: 0.7; }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-left: auto;
+  }
+  .phone {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .socials img { width: 20px; height: 20px; flex: none; }
+  .socials img:last-child { width: 22px; height: 22px; }
+
+  /* ===== Hero ===== */
+  .hero {
+    display: flex;
+    gap: 19px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    min-width: 0;
+  }
+  .hero-image {
+    flex: 1 1 320px;
+    max-width: 480px;
+  }
+  .hero-content {
+    flex: 2 1 480px;
+    min-width: 0;
+    width: 100%;
+    padding-top: clamp(20px, 9vw, 108px);
+  }
+
+  /* headline image + button share the same left inset inside the content column */
+  .hero-indent {
+    padding-left: clamp(0px, 15%, 118px);
+  }
+  .hero-headline-img {
+    width: 100%;
+    max-width: 549px;
+    margin: 0 0 20px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 14px 28px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .cta-btn:hover { opacity: 0.9; }
+
+  /* captions align with the content column's true left edge (no indent) */
+  .hero-captions {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-top: clamp(40px, 8vw, 88px);
+    min-width: 0;
+    width: 100%;
+  }
+  .hero-captions p {
+    flex: 1 1 220px;
+    min-width: 0;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    text-align: left;
+    max-width: 250px;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  /* ===== Wordmark ===== */
+  .wordmark-img {
+    width: 100%;
+    max-width: 1420px;
+    margin: 0 auto;
+  }
+
+  .divider {
+    border: none;
+    border-top: 2px solid var(--divider);
+    margin: 20px 0;
+  }
+
+  .section-title-img {
+    width: 100%;
+    max-width: 326px;
+    margin: 20px 0;
+  }
+
+  /* ===== About ===== */
+  .about {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-top: 14px;
+  }
+  .about-photo {
+    flex: 0 0 auto;
+    width: min(360px, 100%);
+  }
+  .about-name {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin-top: 10px;
+  }
+
+  .about-content {
+    flex: 1 1 500px;
+    min-width: 0;
+    width: 100%;
+  }
+  .about-bio {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin: 0 0 clamp(40px, 10vw, 140px);
+    max-width: 700px;
+  }
+
+  .stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    flex: 1 1 180px;
+    min-width: 130px;
+  }
+  .stat-number-img {
+    width: auto;
+    max-height: 60px;
+    margin: 0 0 6px;
+  }
+  .stat-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin: 0;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .header { flex-direction: column; }
+    .logo { margin-right: 0; }
+    nav.main-nav { order: 3; width: 100%; justify-content: center; margin: 8px 0 0; gap: 24px; }
+    .header-right { margin-left: 0; justify-content: center; }
+    .hero-indent { padding-left: 0; }
+    .hero-content { padding-top: 24px; text-align: center; }
+    .hero-headline-img { margin-left: auto; margin-right: auto; }
+    .hero-captions { justify-content: center; margin-top: 32px; }
+    .hero-captions p { text-align: center; max-width: none; }
+    .cta-btn { margin: 0 auto; }
+    .section-title-img { margin-left: auto; margin-right: auto; }
+  }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 12px 14px 40px; }
+    .header { padding: 14px; }
+    nav.main-nav { gap: 16px; }
+    .hero { gap: 24px; }
+    .about { gap: 24px; }
+    .stats { gap: 24px; }
+    .about-bio { margin-bottom: 40px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">krisandros<span class="accent">o</span>va</div>
+    <nav class="main-nav">
+      <a href="#">Главная</a>
+      <a href="#">О нас</a>
+      <a href="#">Проекты</a>
+      <a href="#">Контакты</a>
+    </nav>
+    <div class="header-right">
+      <div class="phone">тел. 8 000000000000</div>
+      <div class="socials">
+        <img src="image_73f0ed41.png" alt="Telegram" />
+        <img src="image_3f4f9597.png" alt="Instagram" />
+        <img src="image_2de2a7b1.png" alt="WhatsApp" />
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="image_ada1ffc0.png" alt="Интерьер квартиры" />
+    </div>
+    <div class="hero-content">
+      <div class="hero-indent">
+        <img class="hero-headline-img" src="image_1422b212.png" alt="Хоумстейджинг комплектация квартир декорирование к съемкам" />
+        <a href="#" class="cta-btn">оставить заявку</a>
+      </div>
+      <div class="hero-captions">
+        <p>Быстро и стильно комплектую квартиры для сдачи и жизни</p>
+        <p>Для счастья, уюта и любви в вашей жизни</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wordmark -->
+  <img class="wordmark-img" src="image_45be8e54.png" alt="krisandrosova" />
+
+  <hr class="divider" />
+
+  <!-- About title -->
+  <img class="section-title-img" src="image_d1948a71.png" alt="обо мне" />
+
+  <hr class="divider" />
+
+  <!-- About content -->
+  <section class="about">
+    <div class="about-photo">
+      <img src="image_7c440a41.png" alt="Кристина Андросова" />
+      <p class="about-name">Кристина Андросова</p>
+    </div>
+    <div class="about-content">
+      <p class="about-bio">Текст о вашей биографии и достижениях</p>
+      <div class="stats">
+        <div class="stat">
+          <img class="stat-number-img" src="image_ae06b75f.png" alt="30+" />
+          <p class="stat-label">Завершенных проектов</p>
+        </div>
+        <div class="stat">
+          <img class="stat-number-img" src="image_21d1316f.png" alt="5 лет" />
+          <p class="stat-label">Гарантия</p>
+        </div>
+        <div class="stat">
+          <img class="stat-number-img" src="image_db458832.png" alt="2 месяца" />
+          <p class="stat-label">В среднем длится проект</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
